@@ -1,5 +1,9 @@
 #!/usr/bin/python3
 
+""" Set brightness of keyboard lights in two steps.
+Code taken from the Arch wiki:
+https://wiki.archlinux.org/index.php/Keyboard_backlight
+"""
 import dbus
 import sys
 
