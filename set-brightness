@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+# Set brightness with xbacklight
+inc=5%
+time=20
+
+cur=$(xbacklight -get)
+
+case "$1" in
+	"up")
+		xbacklight -inc $inc -time $time
+	;;
+	"down")
+		xbacklight -dec $inc -time $time
+	;;
+	*)
+		echo "Usage: set-brightness [up/down]"
+		exit 1
+esac
+
+# Send update signal
+pkill -RTMIN+11 dwmblocks

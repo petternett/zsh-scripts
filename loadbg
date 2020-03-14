@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# Load wallpaper on startup
+# To set a new wallpaper, use setbg
+
+xwallpaper --zoom $HOME/.config/wall.png
+wal -R

@@ -1,0 +1,25 @@
+#!/bin/zsh
+# Script to set wallpaper using xwallpaper
+# then setting the colorscheme with pywal
+
+set_wallpaper() {
+    # Back up current wallpaper
+    cp ~/.config/wall.png ~/.config/wall.png.old
+
+    # Convert image to png and copy to config folder
+    convert $1 ~/.config/wall.png
+
+    # Set wallpaper
+    xwallpaper --zoom $1
+
+    # Update colorscheme
+    rm -r ~/.cache/wal && wal -i $1 -n
+}
+
+# If no image is specified, set the current wall.png
+# in the config directory as wallpaper
+if [[ $# -eq 0 ]]; then
+    set_wallpaper ~/.config/wall.png
+else
+    set_wallpaper $1
+fi

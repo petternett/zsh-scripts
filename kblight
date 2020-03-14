@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+# Get keyboard backlight brightness
+echo $(cat /sys/class/leds/tpacpi::kbd_backlight/brightness)

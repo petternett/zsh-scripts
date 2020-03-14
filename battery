@@ -1,0 +1,12 @@
+#!/bin/zsh
+
+# Get total % capacity of all batteries
+
+n_bat=0
+total_capacity=0
+for x in $(cat /sys/class/power_supply/BAT?/capacity); do
+	n_bat=$((n_bat + 1))
+	total_capacity=$((total_capacity + $x))
+done
+
+echo ⚡$((total_capacity / n_bat))%

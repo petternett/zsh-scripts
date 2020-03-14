@@ -1,0 +1,16 @@
+#!/bin/zsh
+
+# Get current volume, or MUTE if muted
+case "$(awk -F"[][]" '/%/ { print $4 }' <(amixer sget Master | grep "Left:"))" in
+	"off")
+		echo "MUTE"
+	;;
+	"on")
+        echo -n "🔈"
+        awk -F"[][]" '/%/ { print $2 }' <(amixer sget Master | grep "Left:")
+	;;
+	*)
+		echo "volume error"
+        exit 1
+	;;
+esac

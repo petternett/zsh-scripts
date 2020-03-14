@@ -1,0 +1,24 @@
+#!/bin/zsh
+
+# Mute, increase or lower audio volume
+# TODO: if muted, unmute on up or down
+inc=5%
+
+case "$1" in
+    "up")
+        amixer sset Master $inc+
+    ;;
+    "down")
+        amixer sset Master $inc-
+    ;;
+    "mute")
+        amixer sset Master toggle
+    ;;
+    *)
+        echo "Usage: set-volume [up/down/mute]"
+        exit 1
+    ;;
+esac
+
+# Send update signal
+pkill -RTMIN+10 dwmblocks

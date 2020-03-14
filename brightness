@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+# Get current brightness
+echo "☀$(xbacklight | sed 's/\..*//')"
