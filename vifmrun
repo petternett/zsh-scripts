@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# code by cirala
+# https://github.com/cirala/vifmimg
+
 export FIFO_UEBERZUG="/tmp/vifm-ueberzug-${PPID}"
 
 function cleanup {

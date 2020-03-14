@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Code by cirala
+# https://github.com/cirala/vifmimg
+
 readonly ID_PREVIEW="preview"
 
 #PLAY_GIF="yes"
